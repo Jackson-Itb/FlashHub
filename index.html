@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Flash Game Hub</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+</head>
+<body>
+  <header>
+    <h1>🎮 Flash Game Hub</h1>
+    <div class="theme-toggle">
+      <button id="toggle-theme">Toggle Dark/Light</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="game-grid">
+      <!-- 12 placeholder games -->
+      <!-- Each card uses data-game attribute to know which SWF to load -->
+      <div class="game-card" data-game="games/game1.swf">
+        <div class="game-image">
+          <img src="assets/game1.png" alt="Game 1">
+        </div>
+        <h2>Game 1</h2>
+        <button class="play-btn">Play</button>
+      </div>
+
+      <div class="game-card" data-game="games/game2.swf">
+        <div class="game-image">
+          <img src="assets/game2.png" alt="Game 2">
+        </div>
+        <h2>Game 2</h2>
+        <button class="play-btn">Play</button>
+      </div>
+
+      <!-- Repeat until game12 -->
+      <!-- ... -->
+    </div>
+  </main>
+
+  <!-- Modal for fullscreen game -->
+  <div id="game-modal" class="hidden">
+    <div class="modal-content">
+      <button id="close-modal">X</button>
+      <div id="game-container"></div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
