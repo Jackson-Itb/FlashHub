@@ -8,6 +8,7 @@ toggleBtn.addEventListener("click", () => {
 const gameModal = document.getElementById("game-modal");
 const gameContainer = document.getElementById("game-container");
 const closeModal = document.getElementById("close-modal");
+const fullscreenBtn = document.getElementById("fullscreen-btn");
 
 const ruffle = window.RufflePlayer.newest();
 
@@ -35,4 +36,20 @@ function openGame(src) {
 closeModal.addEventListener("click", () => {
   gameContainer.innerHTML = "";
   gameModal.classList.add("hidden");
+
+  if (document.fullscreenElement) {
+    document.exitFullscreen();
+  }
 });
+
+
+fullscreenBtn.addEventListener("click", () => {
+  if (gameModal.requestFullscreen) {
+    gameModal.requestFullscreen();
+  } else if (gameModal.webkitRequestFullscreen) { /* Safari */
+    gameModal.webkitRequestFullscreen();
+  } else if (gameModal.msRequestFullscreen) { /* IE11 */
+    gameModal.msRequestFullscreen();
+  }
+});
+
